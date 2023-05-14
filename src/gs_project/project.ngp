@@ -1,0 +1,13 @@
+<Version=1.0>
+<Environment=
+	<Name="gs_project">
+	<Authors="astrofra">
+	<Description="New project">
+	<Company="Copyright 2013">
+	<ScriptUnit=
+		<ScriptPath="scripts/project.nut">
+		<Class="ProjectHandler">
+	>
+	<Include>
+	<SearchPaths>
+>

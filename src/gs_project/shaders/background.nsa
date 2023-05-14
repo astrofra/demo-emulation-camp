@@ -1,0 +1,32 @@
+<Version=1.0>
+<Shader=
+	<Input=
+		<Attribute=<Name="a_uv"><Semantic="UV0">>
+		<Attribute=<Name="a_normal"><Semantic="Normal">>
+
+		<Uniform=<Name="t_tex0"><Semantic="MaterialTexture0">>
+		<Uniform=<Name="u_diffuse_color"><Semantic="MaterialDiffuse">>
+		<Uniform=<Name="u_self_color"><Semantic="MaterialSelf">>
+	>
+	<Varying=
+		<Variable=<Name="v_uv"><Type="vec2">>
+		<Variable=<Name="v_normal"><Type="vec3">>
+	>
+	<VertexSource="
+	v_normal = a_normal;
+	v_uv = a_uv;
+	">
+	<PixelSource="
+	
+	float scale = (u_self_color.x + 0.5) * 2.0;
+	float angle = u_self_color.y * 3.1415;
+	float fade = u_self_color.z;
+	
+	vec2 t_uv = (v_uv + vec2(-5.0, 4.0)) * scale;
+	vec2 r_uv = vec2(t_uv.x * cos(angle) - t_uv.y * sin(angle), t_uv.x * sin(angle) + t_uv.y * cos(angle));
+		
+	vec4 _fbuffer = mix(texture2D(t_tex0, r_uv), u_diffuse_color, fade);
+	%diffuse% = vec4(0,0,0,0);
+	%constant% = _fbuffer;
+	">
+>
