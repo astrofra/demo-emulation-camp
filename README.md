@@ -6,6 +6,15 @@ A Win32 PC Intro released by Mandarine to announce the return of a long gone sit
 
 ## About this demo
 
+The demo is implemented in [Squirrel](https://github.com/albertodemichelis/squirrel), based on a custom engine (aka GameStart3D).
+
+### Credits
+
+- Code & Design: [Fra](https://github.com/astrofra)
+- Music: [Med](https://github.com/funkymed)
+- 3D engine: [Xbarr](https://github.com/ejulien)
+
+
 Here is the content of the classic `.nfo` file:
 
 ```
